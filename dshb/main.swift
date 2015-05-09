@@ -153,6 +153,9 @@ else {
     hasSMC = false
 }
 
+// Process widget must be last
+widgets.append(WidgetProcess())
+
 drawAllWidgets()
 
 //------------------------------------------------------------------------------
