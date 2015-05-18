@@ -96,7 +96,7 @@ func drawAllWidgets() {
     var y_pos_new     : Int32 = 0
     var widgetRowCount: Int32 = 0
 
-    for var i = 0; i < widgets.count; ++i {
+    for var i = 0; i < widgets.count - 1; ++i {
         // Are we on a new row?
         if i % Int(maxWidgetsPerRow) == 0 {
             y_pos_new += maxHeight - y_pos_new
@@ -116,5 +116,7 @@ func drawAllWidgets() {
         widgetRowCount++
     }
 
+    // FIXME: Bad means of drawing proc widget
+    widgets[widgets.count - 1].resize(Window(length: Int(COLS), point: (x: 0, y: maxHeight)))
     refresh()
 }
